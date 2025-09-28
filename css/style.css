@@ -68,6 +68,10 @@
         width: 150px;
     }
 
+    #previa_resultado {
+        padding-right: 15px;
+    }
+
     .calculadora {
         width: 350px;
         padding: 25px;
