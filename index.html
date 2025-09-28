@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- BootStrap -->
+    <link href="css/bootstrap/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/calculadora.png" type="image/x-icon">
+    <title>Calculadora</title>
+</head>
+
+<body class="bg-dark align-content-center mx-3" style="height: 100vh;">
+
+    <div id="estilo1" class="container d-none">
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <br />
+
+                <div class="calculadora">
+                    <input id="resultado" type="text" class="form-control resultado" placeholder="0"
+                        disabled="disabled" />
+
+                    <div class="row">
+                        <button onclick="calcular('acao', 'c')" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">C</button>
+                        <button onclick="trocarEstilo('estilo2', 'estilo1')" type="button"
+                            class="btn btn-troca btn-lg font-weight-light"><i
+                                class="bi bi-arrow-repeat fs-2"></i></button>
+                        <button onclick="calcular('acao', '/')" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">/</button>
+                        <button onclick="calcular('acao', '*')" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">x</button>
+                    </div>
+
+                    <div class="row">
+                        <button onclick="calcular('valor', 7)" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">7</button>
+                        <button onclick="calcular('valor', 8)" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">8</button>
+                        <button onclick="calcular('valor', 9)" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">9</button>
+                        <button onclick="calcular('acao', '-')" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">-</button>
+                    </div>
+
+                    <div class="row">
+                        <button onclick="calcular('valor', 4)" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">4</button>
+                        <button onclick="calcular('valor', 5)" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">5</button>
+                        <button onclick="calcular('valor', 6)" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">6</button>
+                        <button onclick="calcular('acao', '+')" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">+</button>
+                    </div>
+
+                    <div class="row">
+                        <button onclick="calcular('valor', 1)" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">1</button>
+                        <button onclick="calcular('valor', 2)" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">2</button>
+                        <button onclick="calcular('valor', 3)" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">3</button>
+                        <button onclick="calcular('acao', '=')" type="button"
+                            class="btn btn-dark btn-lg enter">=</button>
+                    </div>
+
+                    <div class="row" id="enter">
+                        <button onclick="calcular('valor', 0)" type="button"
+                            class="btn btn-dark zero btn-lg font-weight-light">0</button>
+                        <button onclick="calcular('acao', '.')" type="button"
+                            class="btn btn-dark btn-lg font-weight-light">.</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="estilo2" class="container border border-3 border-secondary rounded-3 py-2 py-md-3 d-block">
+
+        <input id="previa_resultado" type="text"
+            class="bg-dark text-secondary d-none text-end fw-bold border-0 pt-3 fs-6 px-sm-5 w-100"
+            disabled="disabled" />
+        <input id="resultado2" type="text" class="bg-dark text-azul text-end fw-bold border-0 p-3 fs-3 px-sm-5 w-100"
+            placeholder="0" disabled="disabled" />
+
+        <div class="row justify-content-center">
+            <button onclick="calcular('acao', 'c')" type="button"
+                class="btn btn-danger btn-lg font-weight-light">C</button>
+            <button onclick="trocarEstilo('estilo1', 'estilo2')" type="button"
+                class="btn btn-info btn-lg font-weight-light"><i class="bi bi-arrow-repeat fs-2"></i></button>
+            <button onclick="calcular('acao', 'apagar')" type="button"
+                class="btn btn-secondary btn-lg font-weight-light"><i class="bi bi-backspace"></i></button>
+            <button onclick="calcular('acao', '/')" type="button"
+                class="btn btn-warning btn-lg font-weight-light fw-bolder fs-4">/</button>
+        </div>
+        <div class="row justify-content-center">
+            <button onclick="calcular('valor', 7)" type="button"
+                class="btn btn-primary btn-lg font-weight-light">7</button>
+            <button onclick="calcular('valor', 8)" type="button"
+                class="btn btn-primary btn-lg font-weight-light">8</button>
+            <button onclick="calcular('valor', 9)" type="button"
+                class="btn btn-primary btn-lg font-weight-light">9</button>
+            <button onclick="calcular('acao', '*')" type="button"
+                class="btn btn-warning btn-lg font-weight-light fw-bolder fs-4">x</button>
+        </div>
+        <div class="row justify-content-center">
+            <button onclick="calcular('valor', 4)" type="button"
+                class="btn btn-primary btn-lg font-weight-light">4</button>
+            <button onclick="calcular('valor', 5)" type="button"
+                class="btn btn-primary btn-lg font-weight-light">5</button>
+            <button onclick="calcular('valor', 6)" type="button"
+                class="btn btn-primary btn-lg font-weight-light">6</button>
+            <button onclick="calcular('acao', '-')" type="button"
+                class="btn btn-warning btn-lg font-weight-light fw-bolder fs-4">-</button>
+        </div>
+        <div class="row justify-content-center">
+            <button onclick="calcular('valor', 1)" type="button"
+                class="btn btn-primary btn-lg font-weight-light">1</button>
+            <button onclick="calcular('valor', 2)" type="button"
+                class="btn btn-primary btn-lg font-weight-light">2</button>
+            <button onclick="calcular('valor', 3)" type="button"
+                class="btn btn-primary btn-lg font-weight-light">3</button>
+            <button onclick="calcular('acao', '+')" type="button"
+                class="btn btn-warning btn-lg font-weight-light fw-bolder fs-4">+</button>
+        </div>
+        <div class="row justify-content-center">
+            <button onclick="calcular('acao', '.')" type="button"
+                class="btn btn-warning btn-lg font-weight-light fs-1">.</button>
+            <button onclick="calcular('valor', 0)" type="button"
+                class="btn btn-primary btn-lg font-weight-light">0</button>
+            <button onclick="calcular('acao', '=')" type="button"
+                class="btn btn-success text-light fs-1 pt-0 btn-lg enter">=</button>
+        </div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <!-- BootStrap -->
+    <script src="libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/90b19570b9.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

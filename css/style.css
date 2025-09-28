@@ -1,0 +1,107 @@
+.calculadora {
+    border: solid 1px #000;
+    padding: 35px;
+    background-color: #474747;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #000;
+}
+
+.text-azul {
+    color: rgb(3, 91, 223);
+}
+
+.btn {
+    width: 90px;
+    height: 80px;
+    margin: 5px;
+    box-shadow: 1px 1px 1px #000;
+}
+
+.btn-troca {
+    background-color: #5a5a5a;
+}
+
+#estilo2 .btn {
+    width: 90px;
+    height: 80px;
+    margin: 7px;
+    box-shadow: 1px 1px 1px #000;
+}
+
+.enter {
+    height: 170px;
+}
+
+#estilo2 .enter {
+    width: 194px;
+}
+
+.zero {
+    width: 190px;
+}
+
+.resultado {
+    width: 390px;
+    text-align: right;
+    margin-left: -5px;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: solid 1px #000;
+    box-shadow: 1px 1px 1px #000;
+}
+
+
+
+@media (max-width: 576px) {
+    #estilo2 .btn {
+        width: 70px;
+        height: 60px;
+        margin: 5px;
+    }
+
+    #estilo2 {
+        width: 350px;
+    }
+
+    #estilo2 .enter {
+        width: 150px;
+    }
+
+    .calculadora {
+        width: 350px;
+        padding: 25px;
+    }
+
+    .btn {
+        width: 70px;
+        height: 60px;
+        margin: 5px;
+    }
+
+    .enter {
+        height: 130px;
+    }
+
+    #enter {
+        margin-top: -70px;
+    }
+
+    .zero {
+        width: 150px;
+    }
+
+    .resultado {
+        width: 310px;
+    }
+}
+
+@media (min-width: 576px) {
+    #estilo2 {
+        width: 470px;
+    }
+
+    #enter {
+        margin-top: -90px;
+    }
+}
